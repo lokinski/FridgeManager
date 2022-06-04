@@ -1,0 +1,25 @@
+version: '2'
+
+services:
+  app:
+    image: 'docker-spring-boot-postgres:latest'
+    build:
+      context: .
+    container_name: app
+    depends_on:
+      - db
+    environment:
+      - DB_URL=jdbc:postgresql://db:5432/fridgemanager
+      - DB_USERNAME=fridgemanager
+      - DB_PASSWORD=fridgemanager
+      - HIBERNATE_DDL_AUTO=update
+      - JWT_SECRET=YourSecretKey12345
+    ports:
+      - 8080:8080
+
+  db:
+    image: 'postgres:13.1-alpine'
+    container_name: db
+    environment:
+      - POSTGRES_USER=fridgemanager
+      - POSTGRES_PASSWORD=fridgemanager
