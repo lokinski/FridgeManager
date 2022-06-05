@@ -5,7 +5,7 @@ It helps you to manage the contents of your fridge and also checks which food ex
 
 ## Configuration
 
-If you want to configure the application, go to `docker-compose.yml` and change environment variables you want.
+To configure the application, go to `docker-compose.yml` and change environment variables you want.
 
 | Variable | Description |
 | -------- | ----------- |
